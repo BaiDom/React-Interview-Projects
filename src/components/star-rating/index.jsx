@@ -20,20 +20,36 @@ export default function StarRating({ noOfStars = 5 }) {
 
   return (
     <div className="star-rating">
-      {[...Array(noOfStars)].map((_, index) => {
-        index += 1;
+      {rating > 9 ? (
+        <div className="title">
+          You gave a {rating}/{noOfStars} star rating! 😁
+        </div>
+      ) : rating < 5 ? (
+        <div className="title">
+          You gave a {rating}/{noOfStars} star rating! 🤨
+        </div>
+      ) : (
+        <div className="title">
+          You gave a {rating}/{noOfStars} star rating! 🙂
+        </div>
+      )}
 
-        return (
-          <FaStar
-            key={index}
-            className={index <= (hover || rating) ? "active" : "inactive"}
-            onClick={() => handleClick(index)}
-            onMouseEnter={() => handleMouseEnter(index)}
-            onMouseLeave={() => handleMouseLeave(index)}
-            size={40}
-          />
-        );
-      })}
+      <div className="stars">
+        {[...Array(noOfStars)].map((_, index) => {
+          index += 1;
+
+          return (
+            <FaStar
+              key={index}
+              className={index <= (hover || rating) ? "active" : "inactive"}
+              onClick={() => handleClick(index)}
+              onMouseEnter={() => handleMouseEnter(index)}
+              onMouseLeave={() => handleMouseLeave(index)}
+              size={50}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }

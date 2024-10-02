@@ -36,7 +36,7 @@ export default function RandomColor() {
       className="container"
       style={{
         width: "100vw",
-        height: "100vw",
+        height: "100vh",
         background: color,
       }}
     >
