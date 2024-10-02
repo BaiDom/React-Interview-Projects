@@ -27,9 +27,21 @@ export default function Accordian() {
     <div className="wrapper">
       <button onClick={() => setEnableMultiSelection(!enableMultiSelection)}>
         {enableMultiSelection === false ? (
-          <div style={{ color: "#E8B4BC" }}>Enable Multi Selection</div>
+          <div
+            style={{
+              color: "#FEC601",
+            }}
+          >
+            Enable Multi Selection
+          </div>
         ) : (
-          <div style={{ color: "#F5E3E0" }}>Disable Multi Selection</div>
+          <div
+            style={{
+              color: "#EA7317",
+            }}
+          >
+            Disable Multi Selection
+          </div>
         )}
       </button>
       <div className="accordian">

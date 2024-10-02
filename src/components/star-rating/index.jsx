@@ -20,17 +20,17 @@ export default function StarRating({ noOfStars = 5 }) {
 
   return (
     <div className="star-rating">
-      {rating > 9 ? (
-        <div className="title">
+      {rating > 9 || hover > 9 ? (
+        <div className="text">
           You gave a {rating}/{noOfStars} star rating! 😁
         </div>
-      ) : rating < 5 ? (
-        <div className="title">
-          You gave a {rating}/{noOfStars} star rating! 🤨
+      ) : rating >= 5 || hover >= 5 ? (
+        <div className="text">
+          You gave a {rating}/{noOfStars} star rating! 🙂
         </div>
       ) : (
-        <div className="title">
-          You gave a {rating}/{noOfStars} star rating! 🙂
+        <div className="text">
+          You gave a {rating}/{noOfStars} star rating! 🤨
         </div>
       )}
 
